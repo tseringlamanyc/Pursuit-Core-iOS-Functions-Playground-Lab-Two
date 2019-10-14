@@ -33,12 +33,12 @@ for (input, expectedOutput) in testCasesOne {
 // Write a function named frequencyDictionary(of:) that takes a String as input and returns a dictionary that maps each character its number of occurrances
 
 func frequencyDictionary(of x: String) -> [Character: Int] {
-    var emptyDict: [Character: Int] = [:]
+    var emptyDict = [Character: Int]()
     for char in x {
-        if emptyDict[char] == nil {
-        emptyDict[char] = 1
+        if let count = emptyDict[char] {
+         emptyDict[char] = count + 1
         } else {
-            emptyDict[char] = (emptyDict[char] ?? 0) + 1
+            emptyDict[char] = 1
         }
 
     }
